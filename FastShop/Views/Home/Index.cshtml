@@ -1,0 +1,11 @@
+﻿@model HomeVM
+
+<h4>Скидки</h4>
+<hr />
+@Html.Partial("_ItemsList", Model._SaleProduct)
+<hr class="text"/>
+<h4>Рекомендованные товары</h4>
+<hr />
+@Html.Partial("_ItemsList", Model._RecommendProduct)
+
+

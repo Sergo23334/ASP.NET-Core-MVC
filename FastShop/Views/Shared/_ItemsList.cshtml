@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Product>
+
+@if(Model.FirstOrDefault() == null)
+{
+	<h5>Товары не найдены</h5>
+	return;
+}
+
+<div id="ItemsList">
+	@foreach (var item in Model)
+	{
+	<a href="/Catalog/Item/@item.Id" class="item">
+		<div>
+			@if (item.IsSale)
+			{
+				<span class="badge badge-danger mark">Акция!</span>
+			}
+			else if (item.IsFavorite)
+			{
+				<span class="badge badge-danger mark">ТОП</span>
+			}
+			<img src="~/files/@item.Img.Split(",")[0]" />
+		</div>
+		<div><h5>@item.Name</h5></div>
+		<div style="padding: 10px;">
+			@if (item.IsSale)
+			{
+				<h5>
+					<span class="badge badge-warning">@item.Price₴</span>
+				</h5>
+				<s class="text-danger">
+					<h5 class="text-black-50">@item.OldPrice₴</h5>
+				</s>
+			}
+			else
+			{
+				<h5 class="text-secondary">@item.Price₴</h5>
+			}
+		</div>
+	</a>
+	}
+</div>

@@ -1,0 +1,70 @@
+﻿#ItemsList {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.item
+{
+	color: unset;
+	text-decoration: none;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: calc(20% - 10px);
+	margin: 5px;
+	border: 1px solid rgb(200, 200, 200);
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+.item:hover
+{
+	color: unset;
+	text-decoration: none;
+	box-shadow: -7px 7px 9px gray;
+}
+
+.mark
+{
+	position: absolute;
+	padding: 5px;
+	font-size: 1.1em;
+	top: 5px;
+	left: 5px;
+	z-index: 10;
+}
+
+.item div h5
+{
+	margin: 0;
+	display: inline;
+}
+
+.item div img
+{
+	width: 100%;
+}
+
+@media (max-width: 768px)
+{
+	nav
+	{
+		position: sticky !important;
+		top: 0 !important;
+		z-index: 27;
+	}
+
+	#search-btn
+	{
+		display: none;
+	}
+
+	.item
+	{
+		width: calc(50% - 10px);
+	}
+}

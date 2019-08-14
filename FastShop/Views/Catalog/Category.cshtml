@@ -1,0 +1,27 @@
+﻿@model CategoryVM
+
+@if (Model.p != null)
+{
+	@Html.Partial("_ItemsList", Model.p)
+}
+else if (Model.s != null)
+{
+	@foreach (var item in Model.s)
+	{
+		<a asp-route-par3="@item.EngName">@item.Name</a>
+	}
+}
+else if (Model.c != null)
+{
+	foreach (var item in Model.c)
+	{
+		<a asp-route-par2="@item.EngName">@item.Name</a>
+	}
+}
+else if (Model.mc != null)
+{
+	foreach (var item in Model.mc)
+	{
+		<a asp-route-par1="@item.EngName">@item.Name</a>
+	}
+}

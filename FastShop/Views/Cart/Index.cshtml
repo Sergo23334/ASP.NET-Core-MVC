@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Product>
+
+@if (Model == null)
+{
+	<h4>Ваша корзина пуста</h4>
+	return;
+}
+
+@foreach (var item in Model)
+{
+	@item.Name<br />
+}
